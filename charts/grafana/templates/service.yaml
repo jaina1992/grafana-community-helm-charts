@@ -32,6 +32,7 @@ spec:
   loadBalancerSourceRanges:
     {{- toYaml . | nindent 4 }}
   {{- end }}
+  allocateLoadBalancerNodePorts: {{ .Values.service.allocateLoadBalancerNodePorts }}
   {{- else }}
   type: {{ .Values.service.type }}
   {{- end }}
